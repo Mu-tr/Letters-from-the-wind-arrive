@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#9edaf2">
+  <title>风信来信：风信邮筒</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <main id="app" aria-label="风信来信：风信邮筒">
+    <canvas id="game" aria-label="互动作品画布"></canvas>
+    <div id="error" role="alert" hidden>哎呀，出错了，请重启试试吧~</div>
+    <div id="save-preview" hidden>
+      <div class="save-preview-panel" role="dialog" aria-modal="true" aria-label="保存回信卡">
+        <div class="save-preview-title">保存回信卡</div>
+        <img id="save-preview-image" alt="回信卡预览">
+        <p id="save-preview-hint">手机上可长按图片保存到相册。</p>
+        <div class="save-preview-actions">
+          <a id="save-preview-open" href="#" target="_blank" rel="noopener">打开原图</a>
+          <a id="save-preview-download" href="#" download="风信来信-回信卡.png">下载图片</a>
+          <button id="save-preview-close" type="button">关闭</button>
+        </div>
+      </div>
+    </div>
+    <div id="rename-dialog" hidden>
+      <form id="rename-dialog-panel" class="rename-dialog-panel" aria-label="主角改名">
+        <div class="rename-dialog-title">主角改名</div>
+        <p class="rename-dialog-hint">输入 1-8 个字，确认后会同步到剧情和标题页。</p>
+        <input id="rename-input" type="text" maxlength="8" autocomplete="off" enterkeyhint="done" placeholder="请输入主角名字">
+        <div class="rename-dialog-actions">
+          <button id="rename-cancel" type="button">取消</button>
+          <button id="rename-confirm" type="submit">确认</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="./js/gameLogic.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
